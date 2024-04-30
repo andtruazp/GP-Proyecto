@@ -1,19 +1,4 @@
 
-
-/*
-Colores
-#2A5E72
-#F3E9E3
-*/
-
-*{
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;    
-}
-body {
-    font-family: "Noto Sans", sans-serif;
-}
 .home {
     flex-wrap: wrap;
 }
@@ -64,17 +49,6 @@ body {
     border-radius: 3px;
     
 }
-/*.menu li a::after{
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 1px;
-    background-color: #FFF;
-    transition: 0.15s ease-in-out;
-}*/
-
 .menu li a:hover {
     background-color: #fff;
     color: #333333;
@@ -92,7 +66,7 @@ body {
 }
 .search-container input {
     padding: 10px;
-    width: 200px; /* Ajusta el ancho según sea necesario */
+    width: 200px; 
     border: 1px solid #ccc;
     border-radius: 5px;
 }
@@ -128,9 +102,6 @@ body {
     right: 20px;
 }
 #check {display: none;}
-
-
-
 /*Banner*/
 #banner {
     background-color: #2c2c2c;
@@ -144,13 +115,12 @@ body {
     background: #2c2c2c;
     height: 280px;
     display: flex;
-    align-items: center; /* Centra verticalmente el contenido */
-    justify-content: center; /* Centra horizontalmente el contenido */
+    align-items: center;
+    justify-content: center; 
     width: 100%;
     position: relative;
 
 }
-
 .typed_wrap {
     background-color: #ffffff;
     border: 2px solid #000000;
@@ -158,15 +128,12 @@ body {
     max-width: 600px;
     margin:  auto;
     padding: 30px;
-    text-align: center; /* Centra el texto horizontalmente */
+    text-align: center;
     margin-top: 80px;
 }
-
 .typed_wrap h1 {
     display: inline;
 }
-
-/* Add custom cursor so it auto inherits font styles */
 .typed::after {
     content: '|';
     display: inline;
@@ -174,14 +141,10 @@ body {
     -moz-animation: blink 0.7s infinite;
     animation: blink 0.7s infinite;
 }
-
-/* Removes cursor that comes with typed.js */
 .typed-cursor {
     opacity: 0;
     display: none;
 }
-
-/* Custom cursor animation */
 @keyframes blink {
     0% { opacity: 1; }
     50% { opacity: 0; }
@@ -248,32 +211,30 @@ section {
     background-color: #fff;
     color: #333;
     padding: 80px 0;
-    text-align: justify; /* Justifica el texto */
-    display: flex; /* Utiliza flexbox para centrar verticalmente el contenido */
-    justify-content: center; /* Centra horizontalmente el contenido */
-    align-items: center; /* Centra verticalmente el contenido */
+    text-align: justify; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
   }
   
   #about .container,
   #enfoque .container,
   #servicios .container,
   #ayuda .container {
-    max-width: 1300px; /* Ancho máximo del contenido */
+    max-width: 1300px; 
   }
   
   #about h2, #enfoque h4, #servicios h4, #ayuda h4 {
     font-size: 2.5em;
     margin-bottom: 1px;
-    padding: 20px; /* Espaciado interno */
+    padding: 20px; 
   }
   
   #about p, #enfoque p, #servicios p, #ayuda p {
     font-size: 1.5em;
     margin-bottom: 0px;
-    padding: 20px; /* Espaciado interno */
+    padding: 20px;
   }  
-
-
 /* Imágenes en secciones */
 #enfoque img {
     max-width: 40%;
@@ -322,56 +283,44 @@ section {
     }
 }
 .banner img {
-    max-width: 100%; /* Asegura que la imagen no se salga del contenedor */
-    height: auto; /* Permite que la altura se ajuste automáticamente */
+    max-width: 100%; 
+    height: auto; 
   }
 
   .imagen-container {
-    /* Ajustar el tamaño del contenedor */
-    width: 500px; /* Por ejemplo, 300 píxeles */
-    height: auto; /* Esto mantiene la altura según el contenido */
-
-    /* Mover el contenedor */
-    margin-top: auto; /* Mover el contenedor hacia abajo */
-    margin-right: auto; /* Mover el contenedor hacia la derecha */
+    width: 500px;
+    height: auto;
+    margin-top: auto; 
+    margin-right: auto;
 }
 
 .imagen-grande {
-    /* Ajustar el tamaño de la imagen dentro del contenedor */
-    width: 100%; /* La imagen ocupará todo el ancho del contenedor */
-    height: auto; /* Esto mantiene la proporción de la imagen */
+    width: 100%;
+    height: auto;
 }
 
 .container-img {
-    /* Ajustar el tamaño del contenedor */
-    max-width: 100%; /* Ancho deseado */
-    /*height: 500px;  Altura automática según el contenido */
-  
-    /* Mover el contenedor */
-    margin-top: 20px; /* Mover el contenedor hacia abajo */
-    /*margin-left: 380px;  Mover el contenedor hacia la derecha */
+    max-width: 100%;
+    margin-top: 20px; 
   }
   
-  .img-banner {
-    /* Ajustar el tamaño de la imagen dentro del contenedor */
-    width: 100%; /* La imagen ocupará todo el ancho del contenedor */
-    height: auto; /* Esto mantiene la proporción de la imagen */
+.img-banner {
+    width: 100%;
+    height: auto;
   }
 
   .card {
-    width: 90%; /* Ancho deseado */
-    height: auto; /* Altura automática según el contenido */
-    /*margin-bottom: 20px; /* Espacio entre las tarjetas */
-    /*margin-left: 270px;*/
+    width: 90%;
+    height: auto;
     margin: 20px auto;
     transition: transform 0.3s ease-in-out;
-    border: 2px solid #949699; /* Grosor y color del borde */
-    border-radius: 10px; /* Bordes redondos */
+    border: 2px solid #949699;
+    border-radius: 10px;
     background: #949699;
 }
 
 .card:hover {
-    transform: scale(1.05); /* Escala aumentada al hacer hover */
+    transform: scale(1.05);
 }
 .oculto {
     display: none;
@@ -395,7 +344,3 @@ section {
     .open-menu, .close-menu {display: block;}
     #check:checked ~ .menu {right: 0;}
 }
-  
-  /* Media query para pantallas más pequeñas */
-  
-  

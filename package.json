@@ -26,7 +26,7 @@
     "ngx-captcha": "^13.0.0",
     "popper.js": "^1.16.1",
     "rxjs": "~7.8.0",
-    "sweetalert2": "^11.9.0",
+    "sweetalert2": "^11.10.8",
     "tslib": "^2.3.0",
     "typed.js": "^2.1.0",
     "zone.js": "~0.12.0"
@@ -36,6 +36,7 @@
     "@angular/cli": "~15.2.10",
     "@angular/compiler-cli": "^15.2.0",
     "@types/jasmine": "~4.3.0",
+    "angular-cli-ghpages": "^2.0.0-beta.2",
     "jasmine-core": "~4.5.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.1.0",
