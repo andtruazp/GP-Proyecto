@@ -6,7 +6,6 @@ import { Component, OnInit, ViewChild, ElementRef, OnDestroy } from '@angular/co
 import { FormBuilder, FormControl, FormGroup, Validators } from "@angular/forms";
 import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
-import { Actividad } from 'src/app/models/actividad';
 import { ActividadService } from 'src/app/service/actividad.service';
 import { Location } from '@angular/common';
 import { debounceTime, distinct, filter, map, switchMap, tap, Subscription, fromEvent } from 'rxjs';
@@ -81,7 +80,6 @@ export class ProyectoComponent implements OnInit, OnDestroy {
   
 
   if (!this.Datos) {
-    // Redirigir al usuario a la página de error
     this.router.navigate(['/error403']);
   }
 
@@ -102,7 +100,6 @@ export class ProyectoComponent implements OnInit, OnDestroy {
       switchMap((searchTerm: string)=> this.integranteService.getUsers(searchTerm))
     ).subscribe((integrantes: Username[])=> {
       this.integrantes = integrantes !== undefined ? integrantes : [];
-      //this.participantes= this.integrantes[0];
       console.log(this.integrantes)
     })
     this.equipo()
@@ -121,15 +118,15 @@ export class ProyectoComponent implements OnInit, OnDestroy {
         return { fechaInvalida: true };
       }
   
-      return null; // La fecha es válida
+      return null; 
     };
   }
  
   getProyectoId(id: number): void {
     this.proyectoService.getProyecto(id).subscribe(
       (proyecto) => {
-        if(proyecto && proyecto.length > 0){ // Verifica si proyecto es un array y tiene al menos un elemento
-          const primerProyecto = proyecto[0]; // Accede al primer elemento del array
+        if(proyecto && proyecto.length > 0){ 
+          const primerProyecto = proyecto[0];
           this.proyecto = proyecto;
           console.log(primerProyecto);
           const fechaInicio = new Date(primerProyecto.fecha_i);
@@ -206,7 +203,6 @@ export class ProyectoComponent implements OnInit, OnDestroy {
         console.error('Error al obtener datos:', error);
       } )
     }catch{
-      //this.id_p = 0
       console.log('no existe');
     }
     
@@ -229,11 +225,10 @@ export class ProyectoComponent implements OnInit, OnDestroy {
   }
 
   irAtras(): void {
-    //this.location.back();
     if (this.id_u === 1) {
-      this.router.navigate(['/equipo']); // Si id_u es igual a 1, navega a '/equipo'
+      this.router.navigate(['/equipo']);
     } else {
-      this.router.navigate(['/homeuser']); // Si id_u es diferente de 1, navega a '/homeuser'
+      this.router.navigate(['/homeuser']);
     }
   
   }
@@ -252,17 +247,14 @@ export class ProyectoComponent implements OnInit, OnDestroy {
       console.error('Error', error);
     }
     return this.usuario
-  }
-
-  
+  }  
   addUser(id: number) {
     this.nuevoIntegrante.id_u = id;
     this.nuevoIntegrante.id_p = this.id_p!; 
 
     console.log(this.nuevoIntegrante);
     const equipoCompleto = this.equipo();
-    
-    // Verificar si el nuevo integrante ya existe en el equipo
+
     const integranteExistente = equipoCompleto.some(integrante => 
         integrante.id_u === this.nuevoIntegrante.id_u 
     );
@@ -304,8 +296,4 @@ eliminarI(id_u: number) {
     }
   );
 }
-
-  
-
-  
 }

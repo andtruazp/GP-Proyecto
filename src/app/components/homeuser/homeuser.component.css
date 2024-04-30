@@ -8,70 +8,59 @@ body {
   margin-top: 10px;
 }
 .card {
-  width: 7000px; /* Ancho de la tarjeta */
-  max-width: 90%; /* Ancho máximo de la tarjeta */
-  margin: 20px auto; /* Centrar la tarjeta horizontalmente y agregar margen superior e inferior */
-  background-color: #B5C3D5; /* Color de fondo de la tarjeta */
-  padding: 40px; /* Espaciado interno de la tarjeta */
-  border-radius: 10px; /* Borde redondeado de la tarjeta */
+  width: 7000px;
+  max-width: 90%;
+  margin: 20px auto; 
+  background-color: #B5C3D5; 
+  padding: 40px;
+  border-radius: 10px;
   margin-top: -50px;
 }
-
 .card-title {
-  text-align: center; /* Centrar el título de la tarjeta */
-  margin-bottom: 20px; /* Espacio inferior entre el título y el formulario */
+  text-align: center; 
+  margin-bottom: 20px; 
 }
-
 .card-body {
-  padding: 0; /* Eliminar el espaciado interno del cuerpo de la tarjeta */
+  padding: 0;
 }
 table {
-    width: 100%;
-    margin-bottom: 20px;
-  }
-  
-  th,
-  td {
-    padding: 5px;
-  }
-  
-  .table-striped tbody tr:nth-child(even) {
-    background-color: #f9f9f9;
-  }
-
-  .breadcrumbs {
-    background-color: transparent;
-  }
-  
-  .breadcrumb {
-    color: black;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    padding: 0;
-    margin: 0;
-  }
-  .breadcrumb-item a {
-    color: black;
-    background-color: transparent;
-  
-  }
-  .breadcrumb-item {
-    list-style-type: none;
-    display: inline-flex;
-    align-items: center;
-    margin-bottom: 0;
-    
-  }
-  
-  .breadcrumb-item + .breadcrumb-item::before {
-    content: '\00BB'; /* Puedes cambiar esto al símbolo que desees */
-    margin: 0 5px;
-  }
-  
-  .breadcrumb-item.active {
-    color: #000; /* Color del texto activo */
-  }
-  .all{
-    padding-top: 80px;
-  }
+  width: 100%;
+  margin-bottom: 20px;
+}
+th,  td {
+  padding: 5px;
+}
+.table-striped tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+.breadcrumbs {
+  background-color: transparent;
+}
+.breadcrumb {
+  color: black;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+}
+.breadcrumb-item a {
+  color: black;
+  background-color: transparent;  
+}
+.breadcrumb-item {
+  list-style-type: none;
+  display: inline-flex;
+  align-items: center;
+  margin-bottom: 0;
+}
+.breadcrumb-item + .breadcrumb-item::before {
+  content: '\00BB';
+  margin: 0 5px;
+}
+.breadcrumb-item.active {
+  color: #000; 
+}
+.all{
+  padding-top: 80px;
+}

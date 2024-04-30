@@ -1,15 +1,14 @@
 <div class="all">
-    
 
     <body>
-        <!-- nvbar inicio-->  
+        <!-- nvbar inicio-->
         <app-header></app-header>
-        <!-- nvbar fin-->  
+        <!-- nvbar fin-->
         <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb" class="breadcrumbs">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="/">Inicio</a></li>
                 <li class="breadcrumb-item"><a href="/homeuser">Mis Actividades</a></li>
-                <li class="breadcrumb-item active"  aria-current="page">{{ act[0]?.nom_a }}</li>
+                <li class="breadcrumb-item active" aria-current="page">{{ act[0]?.nom_a }}</li>
             </ol>
         </nav>
         <div class="container mt-5">
@@ -19,35 +18,35 @@
                 <div class="card-body">
                     <div class="form-group">
                         <label for="nombreActividad">Nombre de la Actividad:</label>
-                        <input type="text" class="form-control" id="nombreActividad" name="nombreActividad" formControlName="nom_a" readonly>
+                        <input type="text" class="form-control" id="nombreActividad" name="nombreActividad"
+                            formControlName="nom_a" readonly>
                     </div>
-    
+
                     <div class="form-group">
                         <label for="descripcionActividad">Descripción Detallada de la Actividad:</label>
-                        <textarea class="form-control" id="descripcionActividad" name="descripcionActividad" formControlName="des_a" rows="4" readonly></textarea>
+                        <textarea class="form-control" id="descripcionActividad" name="descripcionActividad"
+                            formControlName="des_a" rows="4" readonly></textarea>
                     </div>
-    
-                    
+
+
                     <div class="form-group">
                         <label for="notas">Notas:</label>
                         <input type="text" class="form-control" id="notas" name="notas" formControlName="notas">
                     </div>
-    
+
                     <div class="form-group">
                         <label for="estado">Estado:</label>
                         <select class="form-select" name="estado" formControlName="estado">
                             <option *ngFor="let estado of estados" [value]="estado.id_e">{{ estado.nom_e }}</option>
                         </select>
                     </div>
-    
+
                     <button type="submit" class="btn btn-primary btn-block">Guardar</button>
                 </div>
             </form>
-    
-            <!-- Sección para buscar proyecto y mostrar actividades en tabla -->
-           
+
         </div>
     </body>
-    
-    
-    </div>
+
+
+</div>

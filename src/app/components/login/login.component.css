@@ -21,7 +21,7 @@
 	color: #333;
 	border-radius: 12px;
 	padding: 30px 40px;
-	margin-top: -90px; /* Ajustar el margen izquierdo para mover el cuadrado hacia la derecha */
+	margin-top: -90px;
   }
   .wrapper h1{
 	font-size: 36px;
@@ -104,9 +104,8 @@
   .register-link p a:hover{
 	text-decoration: underline;
   }
-
   .recaptcha-container {
-	margin-left: 70px; /* Cambia este valor según sea necesario */
+	margin-left: 70px;
 	margin-top: -10px;
   }
   .error-message {
@@ -115,7 +114,6 @@
 	margin-top: 10px;
 	margin-left: 100px;
   }
-
   /* Estilos para el modal */
 .modal {
 	position: fixed;
@@ -126,22 +124,19 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background-color: rgba(0, 0, 0, 0.5); /* Oscurece el fondo */
+	background-color: rgba(0, 0, 0, 0.5); 
   }
-  
   /* Estilos para el contenido del modal */
   .modal-content {
 	background-color: white;
-	padding: 89px; /* Aumenta el padding para hacer el cuadro más grande */
+	padding: 89px;
 	border-radius: 8px;
-	box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Añade una sombra más pronunciada */
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
   }
-  
   /* Estilos para el título del modal */
   .modal-title {
 	margin-top: 0;
   }
-  
   /* Estilos para el botón de cerrar */
   .btn-close {
 	background: none;
@@ -153,12 +148,10 @@
 	right: 10px;
 	font-size: 1.5rem;
   }
-  
   /* Estilos para el área de entrada del código */
   .input-box {
 	margin-bottom: 20px;
   }
-  
   /* Estilos para los botones del pie de página del modal */
   .modal-footer {
 	display: flex;

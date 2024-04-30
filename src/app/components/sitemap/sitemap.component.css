@@ -1,52 +1,49 @@
 /* Estilos para el contenedor principal */
-.all{
-    margin-top: 80px;
-  }
+.all {
+  margin-top: 80px;
+}
+
+.mapa-sitio-container {
+  border: 2px solid #ccc;
+  padding: 20px;
+  margin-top: 80px;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.mapa-sitio-container h4 {
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.mapa-sitio-container .nivel1>div {
+  margin-bottom: 10px;
+}
+
+.mapa-sitio-container .nivel2>div {
+  margin-left: 20px;
+}
+
+.mapa-sitio-container .nivel3>div {
+  margin-left: 40px;
+}
+
+@media screen and (max-width: 768px) {
   .mapa-sitio-container {
-    border: 2px solid #ccc;
-    padding: 20px;
-    margin-top: 80px;
-    width: 80%; /* Ancho específico */
-    margin: 0 auto; /* Centrado horizontal */
+    padding: 10px;
+    width: 90%;
   }
-  
-  /* Estilos para los títulos */
+
   .mapa-sitio-container h4 {
+    font-size: 25px;
+    margin-bottom: 15px;
+  }
+
+  .mapa-sitio-container .nivel1>div,
+  .mapa-sitio-container .nivel2>div,
+  .mapa-sitio-container .nivel3>div {
+    margin-left: 0;
     margin-bottom: 10px;
-    color: #333;
+    font-size: 20px;
   }
-  
-  /* Estilos para los enlaces nivel 1 */
-  .mapa-sitio-container .nivel1 > div {
-    margin-bottom: 10px;
-  }
-  
-  /* Estilos para los enlaces nivel 2 */
-  .mapa-sitio-container .nivel2 > div {
-    margin-left: 20px;
-  }
-  
-  /* Estilos para los enlaces nivel 3 */
-  .mapa-sitio-container .nivel3 > div {
-    margin-left: 40px;
-  }
-  
-  /* Media query para pantallas pequeñas */
-  @media screen and (max-width: 768px) {
-    .mapa-sitio-container {
-      padding: 10px;
-      width: 90%; /* Ancho específico para pantallas pequeñas */
-    }
-    .mapa-sitio-container h4 {
-      font-size: 25px;
-      margin-bottom: 15px;
-    }
-    .mapa-sitio-container .nivel1 > div,
-    .mapa-sitio-container .nivel2 > div,
-    .mapa-sitio-container .nivel3 > div {
-      margin-left: 0;
-      margin-bottom: 10px;
-      font-size: 20px;
-    }
-  }
-  
+}

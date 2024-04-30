@@ -1,10 +1,10 @@
-*{
+* {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
 	font-family: "Poppins", sans-serif;
-  }
-  body{
+}
+body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -12,8 +12,8 @@
 	background-image: url('../../../assets/login.jpg');
 	background-size: cover;
 	background-position: center;
-  }
-  .wrapper{
+}
+.wrapper {
 	width: 420px;
 	background: transparent;
 	border: 2px solid rgba(0, 0, 0, 0.418);
@@ -21,20 +21,19 @@
 	color: #333;
 	border-radius: 12px;
 	padding: 30px 40px;
-	margin-top: -140px; /* Ajustar el margen izquierdo para mover el cuadrado hacia la derecha */
-  }
-  .wrapper h1{
+	margin-top: -140px;
+}
+.wrapper h1 {
 	font-size: 36px;
 	text-align: center;
-  }
-  .wrapper .input-box{
+}
+.wrapper .input-box {
 	position: relative;
 	width: 100%;
 	height: 50px;
-	
 	margin: 30px 0;
-  }
-  .input-box input{
+}
+.input-box input {
 	width: 100%;
 	height: 100%;
 	background: transparent;
@@ -45,38 +44,36 @@
 	font-size: 16px;
 	color: #333;
 	padding: 20px 45px 20px 20px;
-  }
-  .input-box input::placeholder{
+}
+.input-box input::placeholder {
 	color: #333;
-  }
-  .input-box i{
+}
+
+.input-box i {
 	position: absolute;
 	right: 20px;
 	top: 30%;
 	transform: translate(-50%);
 	font-size: 20px;
-  
-  }
-  .wrapper .remember-forgot{
+}
+.wrapper .remember-forgot {
 	display: flex;
 	justify-content: space-between;
 	font-size: 14.5px;
 	margin: -15px 0 15px;
-  }
-  .remember-forgot label input{
+}
+.remember-forgot label input {
 	accent-color: #fff;
 	margin-right: 3px;
-  
-  }
-  .remember-forgot a{
+}
+.remember-forgot a {
 	color: #fff;
 	text-decoration: none;
-  
-  }
-  .remember-forgot a:hover{
+}
+.remember-forgot a:hover {
 	text-decoration: underline;
-  }
-  .wrapper .btn{
+}
+.wrapper .btn {
 	width: 100%;
 	height: 45px;
 	background: #333;
@@ -89,28 +86,27 @@
 	color: #fff;
 	font-weight: 600;
 	margin-top: 15px;
-  }
-  .wrapper .register-link{
+}
+.wrapper .register-link {
 	font-size: 14.5px;
 	text-align: center;
 	margin: 20px 0 15px;
-  
-  }
-  .register-link p a{
+}
+.register-link p a {
 	color: #fff;
 	text-decoration: none;
 	font-weight: 600;
-  }
-  .register-link p a:hover{
+}
+.register-link p a:hover {
 	text-decoration: underline;
-  }
-  .recaptcha-container {
-	margin-left: 15px; /* Cambia este valor según sea necesario */
+}
+.recaptcha-container {
+	margin-left: 15px;
 	margin-top: -10px;
-  }
-  .error-message {
+}
+.error-message {
 	color: red;
 	font-size: 14px;
 	margin-top: 10px;
 	margin-left: 40px;
-  }
+}

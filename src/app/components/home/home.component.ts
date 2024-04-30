@@ -115,11 +115,11 @@ export class HomeComponent implements OnInit {
 
   searchAndNavigate() {
     const searchTerm = this.inputSearch.nativeElement.value.toLowerCase();
-    if (searchTerm === 'acerca de nosotros') {
+    if (searchTerm === 'acerca de nosotros' || searchTerm === 'nosotros' || searchTerm ==='informacion') {
       this.scrollToSection('about');
-    } else if (searchTerm === 'enfoque') {
+    } else if (searchTerm === 'enfoque' || searchTerm ==='vision' || searchTerm ==='mision') {
       this.scrollToSection('enfoque');
-    } else if (searchTerm === 'servicios') {
+    } else if (searchTerm === 'servicios' || searchTerm ==='ofrece' || searchTerm ==='para que es') {
       this.scrollToSection('servicios');
     } else if (searchTerm === 'ayuda') {
       this.scrollToSection('ayuda');

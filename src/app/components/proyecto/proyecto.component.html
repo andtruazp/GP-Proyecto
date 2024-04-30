@@ -116,10 +116,6 @@
               <td>{{act.nom_e}}</td>
               <td>{{act.fecha_fin | date:'dd/MM/yyyy'}}</td>
               <td>
-                <!-- Botón Editar -->
-                <!--<button class="btn btn-secondary" *ngIf="id_u !== 1" [disabled]="disableInputs" [routerLink]="['/actividades', act.id_a,{ id_p: id_p }]"
-                  (click)="openForEdit(act)">Editar</button>-->
-                <!-- Botón Eliminar -->
                 <button class="btn btn-secondary" *ngIf="id_u !== 1" [disabled]="disableInputs" (click)="eliminar(act.id_a)">Eliminar</button>
               </td>
             </tr>

@@ -21,12 +21,10 @@ import { FooterComponent } from './components/footer/footer.component';
 import { IonicModule } from '@ionic/angular';
 import { RegisterComponent } from './components/register/register.component';
 import { HomeuserComponent } from './components/homeuser/homeuser.component';
-import { BreadcrumsComponent } from './components/breadcrums/breadcrums.component';
 import { NgxCaptchaModule } from 'ngx-captcha';
 import { RecuperacionComponent } from './components/recuperacion/recuperacion.component';
 import { RestablecerComponent } from './components/restablecer/restablecer.component';
 import { SessionService } from './service/session.service';
-import { HomenavComponent } from './components/homenav/homenav.component';
 
 
 @NgModule({
@@ -45,10 +43,8 @@ import { HomenavComponent } from './components/homenav/homenav.component';
     FooterComponent,
     RegisterComponent,
     HomeuserComponent,
-    BreadcrumsComponent,
     RecuperacionComponent,
     RestablecerComponent,
-    HomenavComponent,
 
   ],
   imports: [

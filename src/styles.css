@@ -1,2 +1,129 @@
 @import "~bootstrap/dist/css/bootstrap.css";
+.header{
+    z-index: 1000;
+    background-color: #2A5E72;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    height: 80px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+.nav-bar{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    position: relative;
+    background-color: #333333;
+    padding: 12px 20px;
+}
+.logo img{
+    height: 70px;
+    width: auto;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+.logo img:hover{
+    transform: scale(1.2);
+}
+.menu{
+    display: flex;
+}
+.menu li{
+    padding-left: 30px;
+}
+.menu li a{
+    display: inline-block;
+    text-decoration: none;
+    color:#FFF;
+    text-align: center;
+    transition: 0.15s ease-in-out;
+    position: relative;
+    padding: 8px;
+    border-radius: 3px;
+    
+}
+.menu li a:hover {
+    background-color: #fff;
+    color: #333333;
+    transition: background-color 0.5s, color 0.5s;
+}
+.search-container i{
+    color: white;
+    background: none;
+    border: none;
+    font-size: 30px;
+    padding: 0 20px;
+    line-height: 60px;
+    cursor: pointer;
+    display: fixed;
+}
+.search-container input {
+    padding: 10px;
+    width: 200px; 
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
 
+.btn-search {
+    background-color: #D7D7D7;
+    color: #333333;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.btn-search:hover {
+    background-color: #77B0CC;
+    color: #fff;
+}
+.open-menu, .close-menu {
+    position: absolute;
+    color: #FFF;
+    cursor: pointer;
+    font-size: 1.5rem;
+    display: none;
+}
+.open-menu{
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+}
+.close-menu{
+    top: 20px;
+    right: 20px;
+}
+#check {display: none;}
+.imagen-container {
+    width: 500px;
+    height: auto;
+    margin-top: auto; 
+    margin-right: auto;
+}
+.imagen-grande {
+    width: 100%;
+    height: auto;
+}
+@media (max-width: 610px) {
+    .menu {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 80%;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        z-index: 100;
+        background-color: #333333;
+        transition: all 0.0s ease-in-out;
+    }
+    .menu li {margin-top: 40px;}
+    .menu li a {padding: 10px;}
+    .open-menu, .close-menu {display: block;}
+    #check:checked ~ .menu {right: 0;}
+}

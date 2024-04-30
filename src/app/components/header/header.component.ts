@@ -27,23 +27,13 @@ export class HeaderComponent implements OnInit {
     }else{
       this.id = 1
     }
-    
-
     console.log(this.id)
-
-    
     this.actualizarTextoEnlace();
   }
-  
-  
   cerrarSesion(){
     sessionStorage.removeItem('userData');
     this.router.navigate(['/']);
   }
-  
-
-  
-
   actualizarTextoEnlace(): void {
     const enlace = document.getElementById('iniciarCerrarSesion');
     if (enlace) {

@@ -17,11 +17,6 @@ import { IntegrantesService } from 'src/app/service/integrantes.service';
 })
 export class ActividadesComponent implements OnInit {
   act: Actividad[] = [];
-  integrantes: Usuario[]=[
-    { id_u: 1, usuario: "Usuario1" },
-    { id_u: 2, usuario: "Usuario2" },
-    { id_u: 3, usuario: "Usuario3" }
-  ];
   actForm: FormGroup;
   id_u: any;
   id_p:any;
@@ -84,10 +79,8 @@ export class ActividadesComponent implements OnInit {
     console.log(this.id_u)
 
     if (!this.Datos) {
-      // Redirigir al usuario a la página de error
       this.router.navigate(['/login']);
     }
-
     this.equipo()
   }
 
@@ -100,7 +93,7 @@ export class ActividadesComponent implements OnInit {
         return { fechaInvalida: true };
       }
   
-      return null; // La fecha es válida
+      return null; 
     };
   }
 
@@ -108,11 +101,9 @@ export class ActividadesComponent implements OnInit {
     this.actividadService.getAct(id).subscribe(
       (act) => {
         
-          const actd = act[0]; // Accede al primer elemento del array
+          const actd = act[0]; 
           this.id_p = actd.id_p;
-          console.log("act.id_p en metodo get_idp",this.id_p);  
-          //this.equipoA(this.id_p)       
-        
+          console.log("act.id_p en metodo get_idp",this.id_p);       
       },
       (error) => {
         console.error('Error al obtener la actividad:', error);
@@ -123,8 +114,8 @@ export class ActividadesComponent implements OnInit {
   getAct(id: number): void {
     this.actividadService.getAct(id).subscribe(
       (act) => {
-        if(act && act.length > 0){ // Verifica si act es un array y tiene al menos un elemento
-          const actd = act[0]; // Accede al primer elemento del array
+        if(act && act.length > 0){
+          const actd = act[0]; 
           this.act = act[0];
           console.log(actd);
           const fechaFin = new Date(actd.fecha_fin);
@@ -145,8 +136,6 @@ export class ActividadesComponent implements OnInit {
       }
     );
 }
-
-
   getMisAct(){
     try{
       console.log('el id de la actividad es:',this.id)
@@ -163,59 +152,14 @@ export class ActividadesComponent implements OnInit {
     }
     
   }
- 
-
-  /*crearAct(){
-    const actData = this.actForm.value;
-    
-    if(this.id !== null && this.id !== 0){
-      console.log("id del metodo: ", this.id)
-      this.actividadService.updateAct(this.id, actData).subscribe( act => {
-          console.log('Actividad Creado:');
-          alert('Se actualizo la actividad');
-        },
-        (error) => {
-          console.error('Error al crear el Proyecto:', error);
-          alert('¡Hubo un error!');
-        }
-    );
-    }else{
-      if (this.actForm.valid){
-        const estadoControl = this.actForm.get('estado');
-        if (estadoControl) {
-            const estadoValue = estadoControl.value ? 1 : 0;
-            actData.estado = estadoValue;
-        }
-        actData.id_p = this.id_p;
-        this.actividadService.crearAct(actData).subscribe(
-          (response) => {
-            console.log('Solicitud POST exitosa', response);
-            alert('¡Se creo la actividad!');
-          },
-          (error) => {
-            console.error('Error en la solicitud POST', error);
-            alert('¡Hubo un error!');
-          }
-        );
-      } 
-    } 
-    this.location.back();
-  }*/
   crearAct() {
     const actData = this.actForm.value;
     console.log(actData)
-    // Obtener el usuario seleccionado del formulario
     const selectedUser = this.usuario.find(user => user.usuario === actData.id_u);
     console.log(selectedUser)
-  
-    // Verificar si se encontró un usuario seleccionado
-    
-      // Obtener el id del usuario seleccionado
       const userId = selectedUser?.id_u;
   
       if (this.id !== null && this.id !== 0) {
-        // Actualizar la actividad
-        //actData.id_p = this.id_p;
         this.actividadService.updateAct(this.id, { ...actData, id_u: userId }).subscribe(
           act => {
             console.log('Actividad Actualizada:', act);
@@ -228,10 +172,8 @@ export class ActividadesComponent implements OnInit {
         );
       } else {
         if (this.actForm.valid) {
-          // Asignar el id del usuario seleccionado al campo id_u de actData
           actData.id_u = userId;
           actData.id_p = this.id_p;
-          // Crear la actividad
           this.actividadService.crearAct(actData).subscribe(
             response => {
               console.log('Actividad Creada:', response);
@@ -243,14 +185,8 @@ export class ActividadesComponent implements OnInit {
             }
           );
         }
-      } //this.router.navigate(['/proyecto/',this.id_p]);
-    
-  
-    // Regresar a la página anterior después de crear o actualizar la actividad
-    
+      } 
   }
-  
-
   eliminar(id: any) {
     this.actividadService.eliminar(id).subscribe(
       (response) => {
@@ -265,7 +201,6 @@ export class ActividadesComponent implements OnInit {
   }
 
   irAtras(): void {
-    //this.location.back();
     this.router.navigate(['/proyecto/',this.id_p]);
   }
 
@@ -296,7 +231,4 @@ export class ActividadesComponent implements OnInit {
     }
     return this.usuario;
   }
-
-  
-
 }

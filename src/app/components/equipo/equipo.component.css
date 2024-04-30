@@ -1,6 +1,3 @@
-* {
-  box-sizing: border-box;
-}
 
 body {
   font-family: sans-serif;
@@ -8,7 +5,6 @@ body {
   padding: 0;
   background-color: #fff;
 }
-
 form {
   width: 500px;
   margin: 0 auto;
@@ -16,26 +12,21 @@ form {
   border: 1px solid #ccc;
   border-radius: 5px;
 }
-
 h1 {
   text-align: center;
   margin-bottom: 20px;
 }
-
 label {
   font-weight: bold;
   margin-bottom: 10px;
 }
-
-input,
-textarea {
+input, textarea {
   width: 100%;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
   margin-bottom: 10px;
 }
-
 input[type="submit"] {
   background-color: #000;
   color: #fff;
@@ -44,14 +35,12 @@ input[type="submit"] {
   border-radius: 5px;
   cursor: pointer;
 }
-
 input[type="submit"]:hover {
   background-color: #000000;
 }
 .breadcrumbs {
   background-color: transparent;
 }
-
 .breadcrumb {
   color: black;
   display: flex;
@@ -63,25 +52,20 @@ input[type="submit"]:hover {
 .breadcrumb-item a {
   color: black;
   background-color: transparent;
-
 }
 .breadcrumb-item {
   list-style-type: none;
   display: inline-flex;
   align-items: center;
   margin-bottom: 0;
-  
 }
-
 .breadcrumb-item + .breadcrumb-item::before {
-  content: '\00BB'; /* Puedes cambiar esto al símbolo que desees */
+  content: '\00BB'; 
   margin: 0 5px;
 }
-
 .breadcrumb-item.active {
-  color: #000; /* Color del texto activo */
+  color: #000; 
 }
-
 .all{
   padding-top: 10%;
 }

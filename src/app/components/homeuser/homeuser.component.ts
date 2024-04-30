@@ -1,7 +1,5 @@
-
-
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http'; // Importa HttpClient para hacer solicitudes HTTP
+import { HttpClient } from '@angular/common/http'; 
 import { Router } from '@angular/router';
 import { Actividad } from './../../models/actividad';
 import { ActividadService } from './../../service/actividad.service';
@@ -15,13 +13,13 @@ export class HomeuserComponent implements OnInit {
   id: any;
   Datosusuario: any;
   Datos: any;
-  proyectos: any[] = []; // Arreglo para almacenar los proyectos
+  proyectos: any[] = []; 
   act: Actividad[]=[];
 
   constructor(private http: HttpClient, 
     private router: Router,
     private actividadService: ActividadService,
-    ) { } // Inyecta HttpClient
+    ) { } 
 
   ngOnInit(): void {
     this.Datosusuario = sessionStorage.getItem('userData');
@@ -32,7 +30,6 @@ export class HomeuserComponent implements OnInit {
     console.log(this.id)
 
     if (!this.Datos) {
-      // Redirigir al usuario a la página de error
       this.router.navigate(['/error403']);
     }
 
@@ -41,7 +38,6 @@ export class HomeuserComponent implements OnInit {
   }
 
   getAllProyectos() {
-    // Realiza una solicitud HTTP GET para obtener todos los proyectos del usuario
     this.http.get<any[]>(`https://gp-back-production.up.railway.app/proyecto/all/${this.id}`).subscribe(
       proyectos => {
         this.proyectos = proyectos;
