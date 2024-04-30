@@ -1,6 +1,7 @@
 .home {
     flex-wrap: wrap;
 }
+
 /*Banner*/
 #banner {
     background-color: #2c2c2c;
@@ -10,29 +11,33 @@
     display: flex;
     flex-wrap: wrap;
 }
+
 .banner {
     background: #2c2c2c;
     height: 280px;
     display: flex;
     align-items: center;
-    justify-content: center; 
+    justify-content: center;
     width: 100%;
     position: relative;
 
 }
+
 .typed_wrap {
     background-color: #ffffff;
     border: 2px solid #000000;
     width: 90%;
     max-width: 600px;
-    margin:  auto;
+    margin: auto;
     padding: 30px;
     text-align: center;
     margin-top: 80px;
 }
+
 .typed_wrap h1 {
     display: inline;
 }
+
 .typed::after {
     content: '|';
     display: inline;
@@ -40,27 +45,54 @@
     -moz-animation: blink 0.7s infinite;
     animation: blink 0.7s infinite;
 }
+
 .typed-cursor {
     opacity: 0;
     display: none;
 }
+
 @keyframes blink {
-    0% { opacity: 1; }
-    50% { opacity: 0; }
-    100% { opacity: 1; }
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
 }
 
 @-webkit-keyframes blink {
-    0% { opacity: 1; }
-    50% { opacity: 0; }
-    100% { opacity: 1; }
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
 }
 
 @-moz-keyframes blink {
-    0% { opacity: 1; }
-    50% { opacity: 0; }
-    100% { opacity: 1; }
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
 }
+
 /*Home*/
 
 img {
@@ -68,6 +100,7 @@ img {
     height: auto;
     display: block;
 }
+
 /* Secciones */
 section {
     padding: 80px 0;
@@ -75,6 +108,7 @@ section {
     text-align: center;
     flex-wrap: wrap;
 }
+
 #hero {
     background-color: #333333;
     color: #D7D7D7;
@@ -110,30 +144,28 @@ section {
     background-color: #fff;
     color: #333;
     padding: 80px 0;
-    text-align: justify; 
-    display: flex; 
-    justify-content: center; 
+    text-align: justify;
+    display: flex;
+    justify-content: center;
     align-items: center;
-  }
-  
-  #about .container,
-  #enfoque .container,
-  #servicios .container,
-  #ayuda .container {
-    max-width: 1300px; 
-  }
-  
-  #about h2, #enfoque h4, #servicios h4, #ayuda h4 {
+}
+
+.container {
+    max-width: 1300px;
+}
+
+h2, h4 {
     font-size: 2.5em;
     margin-bottom: 1px;
-    padding: 20px; 
-  }
-  
-  #about p, #enfoque p, #servicios p, #ayuda p {
+    padding: 20px;
+}
+
+p {
     font-size: 1.5em;
     margin-bottom: 0px;
     padding: 20px;
-  }  
+}
+
 /* Imágenes en secciones */
 #enfoque img {
     max-width: 40%;
@@ -143,6 +175,7 @@ section {
     border-radius: 8px;
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
 }
+
 #ayuda img {
     max-width: 40%;
     height: auto;
@@ -151,8 +184,9 @@ section {
     border-radius: 8px;
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
 }
+
 .glass-effect {
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255 ,255, 255, 0));
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     -moz-backdrop-filter: blur(10px);
@@ -160,34 +194,41 @@ section {
     border: 1px solid rgba(255, 255, 255, 0.18);
     border-radius: 16px;
 }
+
 .img-b {
     width: 100%;
     height: auto;
-    max-height: 100%; 
-    object-fit: cover; 
+    max-height: 100%;
+    object-fit: cover;
     opacity: 0;
-    animation: fadeIn 1.5s ease-out forwards; 
+    animation: fadeIn 1.5s ease-out forwards;
 }
+
 @keyframes fadeIn {
     from {
         opacity: 0;
     }
+
     to {
         opacity: 1;
     }
 }
+
 .banner img {
-    max-width: 100%; 
-    height: auto; 
+    max-width: 100%;
+    height: auto;
 }
+
 .container-img {
     max-width: 100%;
-    margin-top: 20px; 
-} 
+    margin-top: 20px;
+}
+
 .img-banner {
     width: 100%;
     height: auto;
 }
+
 .card {
     width: 90%;
     height: auto;
@@ -197,9 +238,7 @@ section {
     border-radius: 10px;
     background: #949699;
 }
+
 .card:hover {
     transform: scale(1.05);
-}
-.oculto {
-    display: none;
 }
