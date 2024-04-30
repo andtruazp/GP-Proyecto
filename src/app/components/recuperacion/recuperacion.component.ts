@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import Swal from 'sweetalert2';
 import { HttpClient } from '@angular/common/http';
 
 @Component({

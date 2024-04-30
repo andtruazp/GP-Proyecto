@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
-import Swal from 'sweetalert2';
 import { HttpClient } from '@angular/common/http';
 
 
@@ -48,10 +47,7 @@ export class RestablecerComponent implements OnInit {
 
     this.http.post('https://gp-back-production.up.railway.app/cambiar-contrasena', body).subscribe(
       (response)=> {
-        Swal.fire({
-          icon: "success",
-          text: "Contraseña restablecida exitosamente",
-        });
+        alert("Contraseña restablecida exitosamente")
         this.router.navigate(['/login']);
       },
       (error) => {
