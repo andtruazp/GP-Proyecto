@@ -33,12 +33,7 @@ export class RecuperacionComponent implements OnInit {
     
       this.http.post('https://gp-back-production.up.railway.app/recuperar-contrasena', body).subscribe(
         (response) => {
-          Swal.fire({
-            icon: "success",
-            title: "El correo ha sido enviado con éxito. Por favor, verifica en tu bandeja de entrada.",
-            showConfirmButton: false,
-            timer: 1500
-          });
+          alert("El correo ha sido enviado con éxito. Por favor, verifica en tu bandeja de entrada.")
         },
         (error) => {
           alert('Error al enviar el correo electrónico. Por favor, verifica tu conexión a internet e intenta nuevamente.');
