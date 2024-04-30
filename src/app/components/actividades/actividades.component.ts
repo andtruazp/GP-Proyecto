@@ -97,20 +97,6 @@ export class ActividadesComponent implements OnInit {
     };
   }
 
-  get_idp (id: number) {
-    this.actividadService.getAct(id).subscribe(
-      (act) => {
-        
-          const actd = act[0]; 
-          this.id_p = actd.id_p;
-          console.log("act.id_p en metodo get_idp",this.id_p);       
-      },
-      (error) => {
-        console.error('Error al obtener la actividad:', error);
-      }
-    );
-  }
-
   getAct(id: number): void {
     this.actividadService.getAct(id).subscribe(
       (act) => {
@@ -136,22 +122,6 @@ export class ActividadesComponent implements OnInit {
       }
     );
 }
-  getMisAct(){
-    try{
-      console.log('el id de la actividad es:',this.id)
-      this.actividadService.getMisActividades(this.id).subscribe(act => {
-        this.act = act;
-        console.log('los valores son',act)
-      },
-      error => {
-        console.error('Error al obtener datos:', error);
-      } )
-    }catch{
-      this.id = 0
-      console.log('no existe');
-    }
-    
-  }
   crearAct() {
     const actData = this.actForm.value;
     console.log(actData)
@@ -208,20 +178,6 @@ export class ActividadesComponent implements OnInit {
     if (this.id_p) {
       try {
         this.integranteService.getIntegrantes(this.id_p).subscribe(usuario => {
-          this.usuario = usuario;
-          console.log(this.usuario)
-        })
-      } catch (error) {
-        console.error('Error', error);
-      }
-    }
-    return this.usuario;
-  }
-
-  equipoA(id: number): any[]{
-    if (id) {
-      try {
-        this.integranteService.getIntegrantes(this.id).subscribe(usuario => {
           this.usuario = usuario;
           console.log(this.usuario)
         })

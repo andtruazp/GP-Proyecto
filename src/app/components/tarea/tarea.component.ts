@@ -128,8 +128,4 @@ getEstados(){
     console.log('no existe');
   }
 }
-
-
-
-
 }

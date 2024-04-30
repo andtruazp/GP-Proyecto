@@ -3,7 +3,7 @@ import { IntegrantesService } from './../../service/integrantes.service';
 import { Proyecto } from './../../models/proyecto';
 import { ProyectoService } from './../../service/proyecto.service';
 import { Component, OnInit, ViewChild, ElementRef, OnDestroy } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from "@angular/forms";
+import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
 import { ActividadService } from 'src/app/service/actividad.service';
@@ -178,20 +178,6 @@ export class ProyectoComponent implements OnInit, OnDestroy {
     } 
   }
 
-  
-  deleteProyecto(id: any) {
-    this.proyectoService.deleteProyecto(id).subscribe(
-      (response) => {
-        console.log('Proyecto eliminado:', response);
-        alert('El Proyecto se ha eliminado');
-      },
-      (error) => {
-        console.error('Error al eliminar el Proyecto:', error);
-        alert('El proyecto no se pudo eliminar');
-      }
-    );
-  }
-
   getMisAct(idp:any){
     try{
       console.log('el id de la actividad es:',idp)
@@ -263,8 +249,6 @@ export class ProyectoComponent implements OnInit, OnDestroy {
         alert('El integrante ya existe en el equipo.');
         return;
     }
-
-    // Si el integrante no existe, proceder con la solicitud POST
     this.integranteService.addIntegrantes(this.nuevoIntegrante).subscribe(
         (response) => {
             console.log('Solicitud POST exitosa', response);
