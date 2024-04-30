@@ -1,0 +1,214 @@
+/* Estilos del navbar */
+
+.navbar {
+  margin-bottom: 0;
+  background: #B5C3D5;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar button {
+  background: #ccc;
+}
+
+.navbar a {
+  text-decoration: none; 
+  color: black;
+  background-color: transparent;
+}
+
+.navbar-nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+.navbar-nav ul li {
+  margin-left: 20px; /* Espacio entre elementos de la lista */
+}
+
+.navbar-nav ul li:first-child {
+  margin-left: 0; /* Elimina el margen izquierdo del primer elemento de la lista */
+}
+
+.navbar-nav ul li a {
+  color: black;
+  text-decoration: none;
+  padding: 14px 20px;
+  display: inline-block; 
+}
+
+.navbar-nav ul li a:hover {
+  background-color: #ddd;
+}
+
+/* Estilos adicionales para hacer que la lista sea horizontal */
+.navbar-nav {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.navbar-nav li {
+  margin-left: 20px;
+}
+
+.navbar-nav li:first-child {
+  margin-left: 0;
+}
+
+
+/* Estilos para la tarjeta y el formulario dentro de la tarjeta */
+.card {
+  width: 7000px; /* Ancho de la tarjeta */
+  max-width: 90%; /* Ancho máximo de la tarjeta */
+  margin: 20px auto; /* Centrar la tarjeta horizontalmente y agregar margen superior e inferior */
+  background-color: #B5C3D5; /* Color de fondo de la tarjeta */
+  padding: 40px; /* Espaciado interno de la tarjeta */
+  border-radius: 10px; /* Borde redondeado de la tarjeta */
+  margin-top: -50px;
+}
+
+.card-title {
+  text-align: center; /* Centrar el título de la tarjeta */
+  margin-bottom: 20px; /* Espacio inferior entre el título y el formulario */
+}
+
+.card-body {
+  padding: 0; /* Eliminar el espaciado interno del cuerpo de la tarjeta */
+}
+
+.form-group {
+  margin-bottom: 20px; /* Espacio inferior entre los grupos de formulario */
+}
+
+.form-group label {
+  font-weight: bold; /* Hacer negrita las etiquetas de los campos de formulario */
+}
+
+.form-control {
+  border: 1px solid #ced4da; /* Estilo del borde de los campos de formulario */
+  border-radius: 4px; /* Borde redondeado de los campos de formulario */
+}
+
+button.btn-primary {
+  width: 100%; /* Ancho completo del botón Enviar */
+}
+
+.btn-block {
+  display: block;
+  width: 100%;
+  margin-bottom: 10px; /* Espacio inferior entre los botones */
+}
+
+.mt-3 {
+  margin-top: 10px;
+}
+.breadcrumbs {
+  background-color: transparent;
+}
+
+.breadcrumb {
+  color: black;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  background-color: transparent;
+}
+.breadcrumb-item a {
+  color: black;
+  background-color: transparent;
+
+}
+.breadcrumb-item {
+  list-style-type: none;
+  display: inline-flex;
+  align-items: center;
+  margin-bottom: 0;
+  
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+  content: '\00BB'; /* Puedes cambiar esto al símbolo que desees */
+  margin: 0 5px;
+}
+
+.breadcrumb-item.active {
+  color: #000; /* Color del texto activo */
+}
+body {
+  font-family: 'Lato', sans-serif;
+  background: #fff;
+  overflow-x: hidden;
+  margin: 0;
+}
+.all{
+padding-top: 80px;
+}
+
+/*Buscador de Integrantes*/
+/* #ctn-bars-search {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #fff;
+  padding: 20px;
+  z-index: 9;
+  transition: all 600ms;
+  box-sizing: border-box; 
+}
+
+#ctn-bars-search input {
+  display: block;
+  width: calc(100% - 40px); 
+  margin: auto;
+  padding: 10px;
+  font-size: 18px;
+  outline: 0;
+  border: 1px solid #ccc; 
+  border-radius: 5px; 
+  box-sizing: border-box; 
+
+#box-search {
+  position: absolute; 
+  top: 100%;
+  left: 0;
+  width: calc(100% - 40px); 
+  background: #fff;
+  z-index: 8;
+  overflow: hidden;
+  display: none;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); 
+  border-radius: 5px; 
+}
+
+#box-search li a {
+  display: block;
+  color: #777777;
+  padding: 12px 20px;
+  text-decoration: none; 
+}
+
+#box-search li a:hover {
+  background: #f3f3f3;
+}
+
+#box-search li a i {
+  margin-right: 10px;
+  color: #777777;
+}
+
+#cover-ctn-search {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 7;
+  display: none;
+}*/

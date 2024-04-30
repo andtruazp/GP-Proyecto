@@ -1,0 +1,202 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: "Noto Sans", sans-serif;
+    padding: 90px 20px 0;
+}
+.header{
+    z-index: 1000;
+    background-color: #333333;
+    height: 95px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+.nav{
+    display: flex;
+    justify-content: space-between;
+    /*max-width: 996px;*/
+}
+.nav-link{
+    color: #D7D7D7;
+    text-decoration: none;
+}
+.logo{
+    padding: 0 40px;
+    line-height: 60px;
+    margin-top: 15px;
+    margin-left: 130px;
+}
+.nav-menu{
+    display: flex;
+    margin-right: 40px;
+    list-style: none;
+}
+.nav-menu-item{
+    font-size: 18px;
+    margin: 0 10px;
+    line-height: 80px;
+    width: max-content;
+}
+.nav-menu-link{
+    padding: 8px;
+    border-radius: 3px;
+}
+.nav-menu-link:hover{
+    background-color: #fff;
+    transition: 0.5s;
+}
+.nav-toggle{
+    color: white;
+    background: none;
+    border: none;
+    font-size: 30px;
+    padding: 0 20px;
+    line-height: 60px;
+    cursor: pointer;
+    display: none;
+}
+.header .logo {
+    cursor: pointer;
+}
+.header .logo img{
+    height: 70px;
+    width: auto;
+    transition: all 0.3s;
+}
+.header .logo img:hover{
+    transform: scale(1.2);
+}
+.search-container {
+    display: flex;
+    align-items: center;
+}
+
+.search-container input {
+    padding: 10px;
+    width: 200px; /* Ajusta el ancho según sea necesario */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.btn-search {
+    background-color: #D7D7D7;
+    color: #333333;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.btn-search:hover {
+    background-color: #000000;
+    color: black;
+}
+.user-menu {
+    position: relative;
+}
+
+.user-toggle {
+    color: white;
+    background: none;
+    border: none;
+    font-size: 24px;
+    padding: 0 20px;
+    line-height: 60px;
+    cursor: pointer;
+}
+
+.user-dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #333333;
+    padding: 10px;
+    border-radius: 5px;
+}
+.user-dropdown-visible {
+    display: flex;
+}
+
+.user-dropdown li {
+    list-style: none;
+}
+
+.user-dropdown a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    padding: 5px 0;
+}
+
+.user-dropdown a:hover {
+    background-color: #555555;
+}
+
+.user-menu:hover .user-dropdown {
+    display: block;
+}
+/*@media (max-width: 768px){
+    body{
+        padding: 90px 20px 0;
+    }
+    .header{
+        height: 60px;
+    }
+    .logo{
+        padding: 0 20px;
+        line-height: 60px;
+    }
+    .nav-menu{
+        flex-direction: column;
+        margin-right: 20px;
+        background-color: #fff;
+        position: fixed;
+        left: 100%;
+        top: 60px;
+        width: 100%;
+        height: calc(100% - 60px);
+        overflow-y: auto;
+        transition: left 0.3s;
+    }
+    .nav-menu-item{
+        line-height: 60px;
+    }
+    
+    .nav-menu-link:hover{
+        background: none;
+        color: #333333;
+    }
+    .nav-toggle{
+        display: block;
+    }
+    .nav-menu_visible{
+        left: 0;
+    }
+}*/
+.nav-menu-link:hover{
+    background-color: #fff;
+    color: #333333;
+    transition: background-color 0.5s, color 0.5s;
+}
+
+.nombre-usuario {
+    color: white; /* Cambia el color del texto a blanco */
+    font-size: 20px; /* Aumenta el tamaño de la letra */
+    margin-left: 30px; /* Agrega margen a la izquierda para separarlo del logo */
+    font-family: Arial, sans-serif; /* Utiliza una fuente de la familia Arial o una fuente sans-serif */
+    text-transform: capitalize; /* Capitaliza la primera letra de cada palabra en el nombre */
+    letter-spacing: 1px; /* Agrega espaciado entre las letras */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Agrega un efecto de sombra al texto */
+  }
+  .oculto {
+    display: none;
+}
+  

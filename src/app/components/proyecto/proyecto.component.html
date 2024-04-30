@@ -1,0 +1,132 @@
+<div class="all">
+  <!-- nvbar inicio-->
+<app-header></app-header>
+<!-- nvbar fin-->
+<nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb" class="breadcrumbs">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/">Inicio</a></li>
+    <li class="breadcrumb-item"><a href="#" (click)="irAtras()">{{ id_u === 1 ? 'Proyectos' : 'Mis Proyectos' }}</a></li>
+    <li class="breadcrumb-item active" aria-current="page">
+      <ng-container *ngIf="proyecto && proyecto.length > 0">
+        {{ proyecto[0]?.nom_p }}
+      </ng-container>
+      <ng-container *ngIf="!(proyecto && proyecto.length > 0)">
+        <a>Crear Proyecto</a>
+      </ng-container>
+    </li>
+  </ol>
+</nav>
+<div class="container mt-5">
+  <!-- Sección para el formulario de proyecto dentro de una tarjeta -->
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">Formulario de Proyecto</h5>
+      <form [formGroup]="proyectoForm" (ngSubmit)="createProyecto()">
+        <div class="form-group">
+          <label for="nombreProyecto">Nombre del Proyecto:</label>
+          <input type="text" class="form-control" id="nombreProyecto" formControlName="nom_p" required>
+        </div>
+
+        <div class="form-group">
+          <label for="descripcionProyecto">Descripción del Proyecto:</label>
+          <textarea class="form-control" id="descripcionProyecto" formControlName="des_p" rows="4" required></textarea>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="fechaInicio">Fecha de Inicio:</label>
+            <input type="date" class="form-control" id="fechaInicio" formControlName="fecha_i" required>
+            <div *ngIf="proyectoForm!.get('fecha_i')!.hasError('fechaInvalida')">
+              La fecha ingresada no puede ser anterior a la fecha actual.
+            </div>
+          </div>
+          <div class="form-group col-md-6">
+            <label for="fechaFin">Fecha de Fin:</label>
+            <input type="date" class="form-control" id="fechaFin" formControlName="fecha_f" required>
+            <div *ngIf="proyectoForm!.get('fecha_f')!.hasError('fechaInvalida')">
+              La fecha ingresada no puede ser anterior a la fecha actual.
+            </div>
+          </div>
+        </div>
+        <button *ngIf="id_u !== 1" [disabled]="disableInputs" type="submit" class="btn btn-primary mb-3">Guardar</button>
+        
+      </form>
+      <div class="form-group">
+        <label for="nombreProyecto">Añadir integrantes</label>
+        <input type="text" class="form-control" [disabled]="disableInputs" #userSearch placeholder="Ingresa el nombre del usuario" [(ngModel)]="searchTerm">
+        <table *ngIf="integrantes.length > 0">
+          <thead>
+            <tr>
+              <th>Nombre de usuario</th>
+              <th>Añadir</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let integrante of integrantes">
+              <td>{{ integrante.usuario }}</td>
+              <td><button class="btn btn-primary" (click)="addUser(integrante.id_u)">Añadir</button></td>
+            </tr>
+          </tbody>
+        </table>
+        <br>
+        <div class="table-responsive" *ngIf="usuario.length > 0">
+          <table class="table">
+              <thead>
+                  <tr>
+                      <th>Integrantes Añadidos</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr *ngFor="let usuario of usuario">
+                      <td>{{ usuario.usuario }}</td>
+                      <td>
+                          <!-- Botón Eliminar -->
+                          <button class="btn btn-secondary" *ngIf="id_u !== 1" [disabled]="disableInputs" (click)="eliminarI(usuario.id_u)">Eliminar</button>
+                      </td>
+                  </tr>
+              </tbody>
+          </table>
+      </div>
+      </div>
+      <button *ngIf="id_u !== 1" [disabled]="disableInputs" class="btn btn-primary btn-block"
+        [routerLink]="['/actividades', { id_p: id_p }]">Agregar Actividades</button>
+    </div>
+  </div>
+  <div class="mt-5 card">
+    <div class="card-body">
+      <h5 class="mt-3">Actividades del Proyecto</h5>
+
+      <div class="table-responsive">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Actividad</th>
+              <th>Descripción</th>
+              <th>Asignado</th>
+              <th>Estado</th>
+              <th>Fecha termino</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let act of act">
+              <td>{{act.nom_a}}</td>
+              <td>{{act.des_a}}</td>
+              <td>{{act.usuario}}</td>
+              <td>{{act.nom_e}}</td>
+              <td>{{act.fecha_fin | date:'dd/MM/yyyy'}}</td>
+              <td>
+                <!-- Botón Editar -->
+                <!--<button class="btn btn-secondary" *ngIf="id_u !== 1" [disabled]="disableInputs" [routerLink]="['/actividades', act.id_a,{ id_p: id_p }]"
+                  (click)="openForEdit(act)">Editar</button>-->
+                <!-- Botón Eliminar -->
+                <button class="btn btn-secondary" *ngIf="id_u !== 1" [disabled]="disableInputs" (click)="eliminar(act.id_a)">Eliminar</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+</div>

@@ -1,0 +1,51 @@
+
+<div class="all">
+  <app-header></app-header>
+<nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb" class="breadcrumbs">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/">Inicio</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Mis Proyectos</li>
+  </ol>
+</nav>
+<div class="card">
+  <h1 class="card-title">Mis actividades</h1>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Actividad</th>
+        <th>Estado</th>
+        <th>Fecha de Termino</th>
+        <th>Ver</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let act of act">
+        <td>{{act.nom_a}}</td>
+        <td>{{act.nom_e}}</td>
+        <td>{{act.fecha_fin | date:'dd/MM/yyyy'}}</td>
+        <td><a [routerLink]="['/tarea', act.id_a]">Ver</a></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="container mt-5 card">
+  <h1 class="card-title">Mis proyectos</h1>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Ver</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let proyecto of proyectos">
+        <td>{{ proyecto.nom_p }}</td>
+        <td><a [routerLink]="['/proyecto', proyecto.id_p]">Detalles</a></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<app-footer></app-footer>
+</div>

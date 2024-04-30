@@ -1,0 +1,23 @@
+<header></header>
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="/"><img src="../../../assets/logo.png" alt="Logo"></a>
+            <span class="nombre-usuario">{{ nombreUsuario }}</span>
+        </div>
+        <button class="nav-toggle">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+        <ul class="nav-menu">
+            <li class="nav-menu-item" *ngIf="id !== 1 || id === 0">
+                <a href="/proyecto" class="nav-menu-link nav-link">Crear Proyecto</a>
+            </li>
+            <li class="nav-menu-item"><a href="#" class="nav-menu-link nav-link" id="iniciarCerrarSesion"
+                    (click)="gestionarSesion()">
+                    {{ estaLogueado ? 'Cerrar Sesión' : 'Iniciar Sesión' }}
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+

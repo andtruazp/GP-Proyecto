@@ -1,0 +1,69 @@
+<app-header></app-header>
+<div class="all">
+  <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb" class="breadcrumbs">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="/">Inicio</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Datos</li>
+    </ol>
+  </nav>
+  
+  <div>
+    <ul class="nav justify-content-center">
+      <li class="nav-item">
+        <a class="nav-link" href="#proyectos">Proyectos</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#usuarios">Usuarios</a>
+      </li>
+    </ul>
+  </div>
+  
+  <div id="proyectos" class="container mt-5 card">
+    <h1 class="card-title">Datos Proyectos</h1>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Descripcion</th>
+          <th>Usuario</th>
+          <th>Ver</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let proyecto of proyectos">
+          <td>{{ proyecto.nom_p }}</td>
+          <td>{{ proyecto.des_p }}</td>
+          <td>{{ proyecto.usuario }}</td>
+          <td><a [routerLink]="['/proyecto', proyecto.id_p]">Detalles</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <br>
+  <br>
+  <div id="usuarios" class="container mt-5 card">
+    <h1 class="card-title">Usuarios</h1>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Nombre de usuario</th>
+          <th>Estado</th>
+          <th>Bloquear</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let usuario of usuarios">
+          <td>{{ usuario.usuario }}</td>
+          <td><div *ngIf="usuario.estado_u === 1">Activo</div>
+            <div *ngIf="usuario.estado_u === 2">Inactivo</div></td>
+            <td>
+              <a type="button" class="btn btn-outline-dark" (click)="actiDesacU(usuario.id_u, 1)">Activo</a>
+              <a type="button" class="btn btn-outline-dark" (click)="actiDesacU(usuario.id_u, 2)">Inactivo</a>
+            </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<app-footer></app-footer>

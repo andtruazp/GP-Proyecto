@@ -1,0 +1,30 @@
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 0px;
+}
+
+footer p {
+    margin-bottom: 0px;
+}
+
+footer ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+footer ul li {
+    display: inline-block;
+    margin: 0 0px;
+}
+
+footer ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+footer ul li a:hover {
+    text-decoration: underline;
+}

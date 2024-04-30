@@ -1,0 +1,55 @@
+<!-- nvbar inicio-->
+<app-header></app-header>
+<!-- nvbar fin-->
+<div class="all">
+    <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb" class="breadcrumbs">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/">Inicio</a></li>
+            <li class="breadcrumb-item"><a href="/homeuser">Mis Proyectos</a></li>
+            <li class="breadcrumb-item"><a [routerLink]="['/proyecto', id_p]">Proyecto</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Actividad</li>
+        </ol>
+    </nav>
+    <div class="container mt-5">
+        <!-- Sección para el formulario de proyecto -->
+        <form action="#" method="post" class="card" [formGroup]="actForm" (ngSubmit)="crearAct()">
+            <h5 class="card-title">Registra Actividad</h5>
+            <div class="card-body">
+                <div class="form-group">
+                    <label for="nombreActividad">Nombre de la Actividad:</label>
+                    <input type="text" class="form-control" id="nombreActividad" name="nombreActividad"
+                        formControlName="nom_a" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="descripcionActividad">Descripción Detallada de la Actividad:</label>
+                    <textarea class="form-control" id="descripcionActividad" name="descripcionActividad"
+                        formControlName="des_a" rows="4" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="miembrosEquipo">Quien lo realiza:</label>
+                    <label for="browser" class="form-label">Ingresa el nombre del usuario</label>
+                    <input class="form-control" list="browsers" name="browser" id="id_u" formControlName="id_u">
+                    <datalist id="browsers">
+                        <option *ngFor="let user of usuario" [value]="user.usuario">{{ user.usuario }}</option>
+                    </datalist>
+                </div>
+                <div class="form-group">
+                    <label for="notas">Notas:</label>
+                    <input type="text" class="form-control" id="notas" name="notas" formControlName="notas">
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label for="fecha_fin">Fecha de Fin:</label>
+                    <input type="date" class="form-control" id="fecha_fin" formControlName="fecha_fin" required>
+                    <div *ngIf="actForm!.get('fecha_fin')!.hasError('fechaInvalida')">
+                      La fecha ingresada no puede ser anterior a la fecha actual.
+                    </div>
+                  </div>
+
+                <button type="submit" class="btn btn-primary btn-block">Guardar</button>
+            </div>
+        </form>
+    </div>
+</div>
